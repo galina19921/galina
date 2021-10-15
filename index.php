@@ -1,44 +1,35 @@
-1.Получить остаток деления 7 на 3
-$a = 7;
-$b = 3;
-echo ($a % $b);         //1
+<?php 
 
-2.Получить целую часть сложения 7 и 7,15
-$a = 7;
-$b = 7.15;
-echo intval($a + $b);    //14
 
-3.Получить корень из 25
-$a=25;
-echo sqrt($a);       //5
+/*1) Создать родительский (главный класс)
+Класс должен содержать 2 свойства
+Каждое свойство должно иметь геттеры и сеттеры*/
+ 
+class Student {
+	private $name ='Mark', $age=19;
+		public function getAge()
+	{
+	return $this->age;
+	}
+	public function setAge(int $val)
+	{
+			$this->age = $val;
+	}
+	public function getName()
+	{
+	return $this->name;
+	}
+	public function setName(string $val)
+	{
+			$this->name = $val;
+	}
+}
+$student = new Student();
 
-4.Получить 4-е слово из фразы - Десять негритят пошли купаться в море
-$phrase = 'Десять негритят пошли купаться в море';
-$fourth_word = explode(' ', trim($phrase)) [3];
-echo $fourth_word;                 //купаться
+$student->setAge(25);
+echo $student->getAge();
 
-5.Получить 17-й символ из фразы - Десять негритят пошли купаться в море
-$phrase = 'Десять негритят пошли купаться в море';
-echo mb_substr($phrase, 16, 1, 'UTF-8');     //п
-
-6.Сделать заглавной первую букву во всех словах фразы - Десять негритят пошли купаться в море
-$phrase = "Десять негритят пошли купаться в море";
-echo mb_convert_case($phrase, MB_CASE_TITLE, 'UTF-8');   //Десять Негритят Пошли Купаться В Море
-
-7.Посчитать длину строки - Десять негритят пошли купаться в море
-$phrase = "Десять негритят пошли купаться в море";
-echo mb_strlen($phrase);                              //37
-
-8.Правильно ли утверждение true равно 1
-var_dump(true == 1);                  // bool(true)
-
-9.Правильно ли утверждение false тождественно 0
-var_dump(false === 0);                //bool(true)
-
-10. Какая строка длиннее three - три
-var_dump('tree' > 'три');             //bool(false)
-
-11.Какое число больше 125 умножить на 13 плюс 7 или 223 плюс 28 умножить 2  
-var_dump((125*13+7) > (223+28*2));       //bool(true)
+$student->setName('Maria');
+echo $student->getName();
 
 
